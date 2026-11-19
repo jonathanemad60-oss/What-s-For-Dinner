@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon1.png" />
+    <title>What's for Dinner? - Lasagna Bolognese</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+          <div class="brand-logo"><i class="fa-solid fa-utensils"></i></div>
+          <div class="brand-text d-none d-md-block">
+            <h1>What's For Dinner</h1>
+            <p>Your daily meal inspiration</p>
+          </div>
+        </a>
+        <div class="nav-actions d-flex align-items-center gap-4">
+          <a href="#" class="nav-icon-btn"><i class="fa-regular fa-bookmark"></i></a>
+          <a href="#" class="nav-icon-btn"><i class="fa-solid fa-clock-rotate-left"></i></a>
+          <a href="#" class="nav-icon-btn"><i class="fa-solid fa-gear"></i></a>
+          <img src="./images/jonathan.jpeg" alt="User Profile" class="user-avatar" />
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="recipe-card row g-0">
+        <div class="col-lg-5">
+          <!-- JS SECTION 1 START: Replace this static image, rating, and statistics -->
+          <div class="recipe-image-container" id="imgSection">
+            <img src="./images/margherita-pizza.png" alt="Margherita Pizza" class="recipe-image" />
+            <div class="recipe-rating">
+              <i class="fa-solid fa-star text-warning"></i>
+              <span>4.8 <small class="text-muted">(356 reviews)</small></span>
+            </div>
+            <div class="stats-overlay">
+              <div class="stat-item">
+                <i class="fa-solid fa-clock"></i>
+                <span class="stat-label">Prep Time</span>
+                <span class="stat-value">60 min</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-fire"></i>
+                <span class="stat-label">Cook Time</span>
+                <span class="stat-value">15 min</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-users"></i>
+                <span class="stat-label">Servings</span>
+                <span class="stat-value">2 people</span>
+              </div>
+            </div>
+          </div>
+          <!-- JS SECTION 1 END -->
+        </div>
+
+        <div class="col-lg-7 p-4 p-md-5 recipe-details-column">
+          <div class="recipe-scroll-content">
+            <!-- JS SECTION 2 START: Generate recipe title, description, badges, and alert -->
+            <div id="infoSection">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="recipe-badges d-flex gap-2">
+                  <span class="badge-custom badge-difficulty">Beginner</span>
+                  <span class="badge-custom badge-cuisine">Italian</span>
+                </div>
+                <div class="action-buttons d-flex gap-2">
+                  <button class="btn rounded-2 shadow-sm" type="button">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                  <button class="btn rounded-2 shadow-sm" type="button">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+              <h2 class="display-6 fw-bold mb-2">Margherita Pizza</h2>
+              <p class="text-muted mb-4">Classic Italian pizza with tomato sauce, mozzarella, and fresh basil</p>
+              <!-- JS CONDITION: Show this alert only when prepTime > 45; otherwise hide it. -->
+              <div class="custom-alert d-flex align-items-center">
+                <i class="fa-solid fa-triangle-exclamation fs-4"></i>
+                <div>
+                  <span class="alert-title">Extended Preparation Time</span>
+                  <span class="alert-text"
+                    >This recipe requires more than 45 minutes to prepare. Plan accordingly!</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- JS SECTION 2 END -->
+            <!-- Bootstrap tabs below remain static -->
+            <ul class="nav nav-tabs mt-4 mb-4" id="recipeTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="ingredients-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#ingredients"
+                  type="button"
+                  role="tab">
+                  <i class="fa-solid fa-list-ul"></i> Ingredients
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="instructions-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#instructions"
+                  type="button"
+                  role="tab">
+                  <i class="fa-solid fa-book-open"></i> Instructions
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="nutrition-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nutrition"
+                  type="button"
+                  role="tab">
+                  <i class="fa-solid fa-chart-pie"></i> Nutrition
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tips-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#tips"
+                  type="button"
+                  role="tab">
+                  <i class="fa-solid fa-lightbulb"></i> Chef's Tips
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content scrollable-tabs" id="recipeTabsContent">
+              <div class="tab-pane fade show active" id="ingredients" role="tabpanel">
+                <!-- JS SECTION 3 START: Generate ingredient items  -->
+                <ul class="ingredient-list" id="ingredientsList">
+                  <li class="ingredient-item">
+                    <div class="number-circle">1</div>
+                    1 pizza dough
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">2</div>
+                    1/2 cup tomato sauce
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">3</div>
+                    1 cup mozzarella cheese
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">4</div>
+                    Fresh basil leaves
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">5</div>
+                    1 tbsp olive oil
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">6</div>
+                    1/2 tsp salt
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">7</div>
+                    1/2 tsp black pepper
+                  </li>
+                  <li class="ingredient-item">
+                    <div class="number-circle">8</div>
+                    1/4 cup Parmesan cheese
+                  </li>
+                </ul>
+              </div>
+              <!-- JS SECTION 3 END -->
+              <div class="tab-pane fade" id="instructions" role="tabpanel">
+                <!-- JS SECTION 4 START: Generate numbered steps  -->
+                <ul class="instruction-list" id="instructionsList">
+                  <li class="instruction-item">
+                    <div class="number-circle">1</div>
+                    Preheat oven to 475°F (245°C).
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">2</div>
+                    Roll out the pizza dough on a floured surface.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">3</div>
+                    Spread tomato sauce evenly over the dough.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">4</div>
+                    Add mozzarella cheese and Parmesan cheese.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">5</div>
+                    Drizzle with olive oil.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">6</div>
+                    Bake for 12-15 minutes until crust is golden.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">7</div>
+                    Top with fresh basil leaves.
+                  </li>
+                  <li class="instruction-item">
+                    <div class="number-circle">8</div>
+                    Slice and serve hot.
+                  </li>
+                </ul>
+              </div>
+              <!-- JS SECTION 4 END -->
+              <div class="tab-pane fade" id="nutrition" role="tabpanel">
+                <!-- JS SECTION 5 START: Populate nutrition cards  -->
+                <div class="nutrition-grid" id="nutritionGrid">
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-warning">
+                        <i class="fa-solid fa-fire"></i>
+                      </div>
+                      <span class="text-muted">Calories</span>
+                    </div>
+                    <span class="fw-bold">320 kcal</span>
+                  </div>
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-primary">
+                        <i class="fa-solid fa-dumbbell"></i>
+                      </div>
+                      <span class="text-muted">Protein</span>
+                    </div>
+                    <span class="fw-bold">14g</span>
+                  </div>
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-info">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                      </div>
+                      <span class="text-muted">Carbohydrates</span>
+                    </div>
+                    <span class="fw-bold">38g</span>
+                  </div>
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-danger">
+                        <i class="fa-solid fa-droplet"></i>
+                      </div>
+                      <span class="text-muted">Fat</span>
+                    </div>
+                    <span class="fw-bold">12g</span>
+                  </div>
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-success">
+                        <i class="fa-solid fa-leaf"></i>
+                      </div>
+                      <span class="text-muted">Fiber</span>
+                    </div>
+                    <span class="fw-bold">3g</span>
+                  </div>
+                  <div class="nutrition-card">
+                    <div class="nutrition-info">
+                      <div class="nutrition-icon bg-secondary">
+                        <i class="fa-solid fa-cube"></i>
+                      </div>
+                      <span class="text-muted">Sodium</span>
+                    </div>
+                    <span class="fw-bold">4mg</span>
+                  </div>
+                </div>
+              </div>
+              <!-- JS SECTION 5 END -->
+              <div class="tab-pane fade" id="tips" role="tabpanel">
+                <!-- JS SECTION 6 START: Generate chef tips -->
+                <div id="tipsList">
+                  <div class="tip-item">
+                    <i class="fa-solid fa-circle-check tip-icon"></i
+                    ><span>Use fresh mozzarella for better flavor.</span>
+                  </div>
+                  <div class="tip-item">
+                    <i class="fa-solid fa-circle-check tip-icon"></i><span>Preheat the oven well before baking.</span>
+                  </div>
+                  <div class="tip-item">
+                    <i class="fa-solid fa-circle-check tip-icon"></i><span>Don't add too much sauce.</span>
+                  </div>
+                  <div class="tip-item">
+                    <i class="fa-solid fa-circle-check tip-icon"></i><span>Add basil after baking.</span>
+                  </div>
+                  <div class="tip-item">
+                    <i class="fa-solid fa-circle-check tip-icon"></i><span>Use a pizza stone if available.</span>
+                  </div>
+                </div>
+              </div>
+              <!-- JS SECTION 6 END -->
+            </div>
+          </div>
+          <!-- JS SECTION 7: Connect this button to Generate Function -->
+          <button class="btn btn-gradient mt-4" type="button" onclick="getRandom()">
+            <i class="fa-solid fa-arrows-rotate"></i> Try Another Recipe
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- Add your JavaScript implementation to main.js during the lesson. -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
